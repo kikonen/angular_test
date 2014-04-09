@@ -1,4 +1,15 @@
 AngularTest::Application.routes.draw do
+  root to: 'static#index'
+
+  # @see http://omarriott.com/aux/angularjs-html5-routing-rails/
+  match "/*path" => redirect("/?goto=%{path}")
+
+#  namespace :api, defaults: {format: :json} do
+#    get 'tasks', to: 'task#index'
+#  end
+
+#  get 'tasks', to: 'task#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
