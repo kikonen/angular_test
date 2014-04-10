@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require_self
+//= require underscore
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
