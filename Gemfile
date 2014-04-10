@@ -11,11 +11,13 @@ gem 'hashie'
 gem 'logging-rails'
 gem 'awesome_print'
 
-gem 'angularjs-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'angularjs-rails'
+  gem 'bootstrap-sass', '~> 2.3.1.0'
+
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
