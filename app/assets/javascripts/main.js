@@ -26,6 +26,10 @@ App.config(function($routeProvider, $locationProvider) {
             templateUrl: '../templates/task/index.html',
             controller: 'TaskIndexController'
         })
+        .when("/tasks/:taskId", {
+            templateUrl: '../templates/task/show.html',
+            controller: 'TaskShowController'
+        })
         .otherwise({
             redirectTo: "/"
         });
