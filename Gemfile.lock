@@ -65,6 +65,8 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     multi_json (1.9.2)
+    ngmin-rails (0.4.0)
+      rails (>= 3.1)
     polyglot (0.3.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -135,6 +137,7 @@ DEPENDENCIES
   hashie
   jquery-rails
   logging-rails
+  ngmin-rails
   pry-rails
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)

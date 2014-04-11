@@ -15,6 +15,7 @@ gem 'awesome_print'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'ngmin-rails'
   gem 'angularjs-rails'
   gem 'underscore-rails'
   gem 'bootstrap-sass', '~> 2.3.1.0'
