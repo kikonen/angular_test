@@ -8,5 +8,7 @@ function($scope, $location, Task) {
     target: "This is just test",
     message: "I mean it TEST!"
   };
-  $scope.tasks = Task.query();
+  $scope.tasks = Task.query(function(tasks) {
+    console.log(tasks);
+  });
 }]);
