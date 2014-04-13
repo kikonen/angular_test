@@ -1,13 +1,13 @@
 module Api
   class TaskController < ApplicationController
     def index
-      ap index: tasks
+      logger.info index: tasks
       render json: tasks
     end
 
     def show
       task = tasks_by_id[params[:id].to_i]
-      ap show: "#{params[:id]}", task: task
+      logger.info show: "#{params[:id]}", task: task
       sleep 0.5
       render json: task
     end
