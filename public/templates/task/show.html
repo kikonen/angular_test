@@ -2,8 +2,11 @@
   <a href="/">Home</a> / <a href="/tasks">Tasks</a>
   <h2 class="text-center">{{ task.name }}</h2>
   <div>Location: {{ loc.location }}</div>
-  <div>Target: {{ task.id }}</div>
-  <div>Message: <b>{{ task.message }}</b></div>
   <div>Loaded: <b>{{ loaded }}</b></div>
+  <hr>
+  <div>Id: {{ task.id }}</div>
+  <div>Name: <b>{{ task.name }}</b></div>
+  <div>Message: <b>{{ task.message }}</b></div>
+  <div>Done: <b>{{ task.done }}</b></div>
   <hr>
 </div>
