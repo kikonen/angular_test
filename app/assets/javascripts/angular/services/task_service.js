@@ -1,4 +1,7 @@
-App.factory("Task", function($resource) {
+App.factory(
+"Task",
+["$resource",
+function($resource) {
   return $resource(
     '/api/tasks/:taskId',
     {},
@@ -8,4 +11,4 @@ App.factory("Task", function($resource) {
         isArray: true
       }
     });
-});
+}]);

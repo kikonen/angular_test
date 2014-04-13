@@ -14,7 +14,9 @@
 //= require underscore
 //= require jquery
 //= require jquery_ujs
+//= require rails-timeago
 //= require bootstrap
+//= require yui
 //= require angular
 //= require angular-route
 //= require angular-animate

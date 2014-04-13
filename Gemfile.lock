@@ -89,6 +89,9 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
+    rails-timeago (2.10.1)
+      actionpack (>= 3.1)
+      activesupport (>= 3.1)
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -125,6 +128,9 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     underscore-rails (1.6.0)
+    yui-compressor (0.12.0)
+    yui-rails (3.13.0.0.3.0)
+      rails (>= 3.1)
 
 PLATFORMS
   ruby
@@ -140,8 +146,11 @@ DEPENDENCIES
   ngmin-rails
   pry-rails
   rails (= 3.2.13)
+  rails-timeago
   sass-rails (~> 3.2.3)
   sqlite3
   therubyracer
   uglifier (>= 1.0.3)
   underscore-rails
+  yui-compressor
+  yui-rails

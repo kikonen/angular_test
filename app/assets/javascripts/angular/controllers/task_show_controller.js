@@ -1,7 +1,11 @@
-App.controller("TaskShowController", function($scope, $location, $routeParams, Task) {
+App.controller(
+"TaskShowController",
+["$scope", "$location", "$routeParams", "Task",
+function($scope, $location, $routeParams, Task) {
   $scope.loc = $location;
   $scope.taskId = $routeParams.taskId;
   $scope.loaded = 'Nope';
+  $scope.load_time = null;
   $scope.task = {
     id: $scope.taskId,
     name: 'wait...',
@@ -14,5 +18,6 @@ App.controller("TaskShowController", function($scope, $location, $routeParams, T
       $scope.loaded = 'Wassup up';
       $scope.task = task;
       $scope.taskId = task.id;
+      $scope.load_time = new Date();
     });
-});
+}]);

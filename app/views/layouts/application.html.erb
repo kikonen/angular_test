@@ -8,6 +8,7 @@
 </head>
 <body>
 
+  <%= timeago_tag Time.zone.now, :nojs => true, :limit => 10.days.ago %>
   <div ng-view>
     <%= yield %>
   </div>
