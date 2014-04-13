@@ -1,6 +1,7 @@
-App = angular.module('App', ['ngRoute', 'ngResource']);
+"use strict";
+window.App = angular.module('App', ['ngRoute', 'ngResource']);
 
-App.config(function($routeProvider, $locationProvider) {
+window.App.config(function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
   $routeProvider
     .when("/", {

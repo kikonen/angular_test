@@ -1,4 +1,5 @@
-App.controller(
+"use strict";
+window.App.controller(
 "TaskIndexController",
 ["$scope", "$location", "Task",
 function($scope, $location, Task) {

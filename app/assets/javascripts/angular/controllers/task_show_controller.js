@@ -1,3 +1,4 @@
+"use strict";
 App.controller(
 "TaskShowController",
 ["$scope", "$location", "$routeParams", "Task",
