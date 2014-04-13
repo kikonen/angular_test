@@ -8,4 +8,12 @@
   <div ng-repeat="task in tasks">
     <a ng-href="{{ '/tasks/' + task.id }}" >{{ task.name }} - {{ task.message }}</a>
   </div>
+
+  <form role=form">
+    <button type="submit"
+            class="btn btn-success"
+            ng-click="handleNew()">
+      New
+    </button>
+  </form>
 </div>

@@ -10,5 +10,30 @@ module Api
       sleep 0.5
       render json: task.values
     end
+
+    def create
+      task = save
+      sleep 0.5
+      render json: task.values
+    end
+
+    def update
+      task = save
+      sleep 0.5
+      render json: task.values
+    end
+
+    private
+
+    def save
+      attrs = params.clone
+      attrs.delete :action
+      attrs.delete :controller
+      attrs.delete :format
+
+      task = Task.new(attrs)
+      task.save
+      task
+    end
   end
 end

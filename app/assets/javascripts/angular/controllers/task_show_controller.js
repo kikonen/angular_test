@@ -3,22 +3,22 @@ App.controller(
 "TaskShowController",
 ["$scope", "$location", "$routeParams", "Task",
 function($scope, $location, $routeParams, Task) {
-  $scope.loc = $location;
-  $scope.taskId = $routeParams.taskId;
-  $scope.loaded = 'Nope';
-  $scope.load_time = null;
+  $scope.editMode = false;
+  $scope.ready = false;
   $scope.task = {
-    id: $scope.taskId,
+    id: $routeParams.taskId,
     name: 'wait...',
     message: 'wait...'
   };
 
   Task.get(
-    { taskId: $scope.taskId },
+    { taskId: $routeParams.taskId },
     function(task) {
-      $scope.loaded = 'Wassup up';
       $scope.task = task;
-      $scope.taskId = task.id;
-      $scope.load_time = new Date();
+      $scope.ready = true;
     });
+
+  $scope.handleCommit = function() {
+    $location.url("/tasks/"+ $scope.task.id + "/edit");
+  };
 }]);

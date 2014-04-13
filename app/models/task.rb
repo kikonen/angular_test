@@ -3,7 +3,7 @@ class Task
   delegate :id, :name, :message, :done, :[], :[]=, to: :values
 
   def initialize(values = {})
-    @values = Hashie::Mash.new(values)
+    @values = Hashie::Mash.new(values.clone)
   end
 
   def self.all

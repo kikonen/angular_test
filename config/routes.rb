@@ -4,6 +4,8 @@ AngularTest::Application.routes.draw do
   namespace :api, defaults: {format: :json} do
     get 'tasks', to: 'task#index'
     get 'tasks/:id', to: 'task#show'
+    post 'tasks', to: 'task#create'
+    post 'tasks/:id', to: 'task#update'
   end
 
   # @see http://omarriott.com/aux/angularjs-html5-routing-rails/

@@ -11,4 +11,9 @@ function($scope, $location, Task) {
   $scope.tasks = Task.query(function(tasks) {
     console.log(tasks);
   });
+
+  $scope.handleNew = function() {
+    console.log("New");
+    $location.url("/tasks/create");
+  };
 }]);

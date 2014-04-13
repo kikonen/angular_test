@@ -1,12 +1,38 @@
 <div class="container">
   <a href="/">Home</a> / <a href="/tasks">Tasks</a>
   <h2 class="text-center">{{ task.name }}</h2>
-  <div>Location: {{ loc.location }}</div>
-  <div>Loaded: <b>{{ loaded }}</b></div>
-  <hr>
-  <div>Id: {{ task.id }}</div>
-  <div>Name: <b>{{ task.name }}</b></div>
-  <div>Message: <b>{{ task.message }}</b></div>
-  <div>Done: <b>{{ task.done }}</b></div>
-  <hr>
+  <form role=form">
+    <div class="form-group">
+      <label><strong>Id:</strong></label>
+      <input type="text" class="form-control" readonly="true" ng-model="task.id">
+    </div>
+    <div class="form-group">
+      <label><strong>Name:</strong></label>
+      <input type="text" autofocus class="form-control" ng-readonly="!editMode" ng-model="task.name">
+    </div>
+    <div class="form-group">
+      <label><strong>Message:</strong></label>
+      <input type="text" class="form-control" ng-readonly="!editMode" ng-model="task.message">
+    </div>
+    <div class="checkbox">
+      <label for="task.done">
+        <input type="checkbox" class="form-control" ng-readonly="!editMode" ng-model="task.done">
+        Done
+      </label>
+    </div>
+
+    <button type="submit"
+            class="btn btn-primary"
+            ng-class="{editMode: btn-danger}"
+            ng-disabled="!ready"
+            ng-click="handleCommit()">
+      {{ editMode ? "Save" : "Edit" }}
+    </button>
+    <button type="rollback"
+            class="btn"
+            ng-show="editMode"
+            ng-click="handleRollback()">
+      Cancel
+    </button>
+  </form>
 </div>

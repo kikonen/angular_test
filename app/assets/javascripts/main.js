@@ -1,7 +1,9 @@
 "use strict";
 window.App = angular.module('App', ['ngRoute', 'ngResource']);
 
-window.App.config(function($routeProvider, $locationProvider) {
+window.App.config(function($httpProvider, $routeProvider, $locationProvider) {
+  $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+
   $locationProvider.html5Mode(true);
   $routeProvider
     .when("/", {
@@ -27,9 +29,17 @@ window.App.config(function($routeProvider, $locationProvider) {
       templateUrl: '../templates/task/index.html',
             controller: 'TaskIndexController'
     })
+    .when("/tasks/create", {
+      templateUrl: '../templates/task/show.html',
+      controller: 'TaskEditController'
+    })
     .when("/tasks/:taskId", {
       templateUrl: '../templates/task/show.html',
       controller: 'TaskShowController'
+    })
+    .when("/tasks/:taskId/edit", {
+      templateUrl: '../templates/task/show.html',
+      controller: 'TaskEditController'
     })
     .otherwise({
       redirectTo: "/"
