@@ -44,6 +44,8 @@ class TaskStorage
     if File.exists?(@storage_file)
       tasks = YAML.load_file(@storage_file)
       @tasks = Hash[tasks.map {|t| [t.id, t]}]
+    else
+      @tasks = {}
     end
   end
 
