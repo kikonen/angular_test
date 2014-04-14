@@ -9,7 +9,7 @@ AngularTest::Application.routes.draw do
   end
 
   # @see http://omarriott.com/aux/angularjs-html5-routing-rails/
-  match "/*path" => redirect("/?goto=%{path}")
+  match "/*path" => redirect("/?path=%{path}")
 
 #  get 'tasks', to: 'task#index'
 

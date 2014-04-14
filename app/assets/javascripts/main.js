@@ -14,10 +14,10 @@ window.App.config(function($httpProvider, $routeProvider, $locationProvider) {
       // Add our redirection handler, normally this is used
       // in otherwise routes, but we can co-opt it here
       redirectTo: function(current, path, search) {
-        if (search.goto) {
+        if (search.path) {
           // if we were passed in a search param, and it has a path
           // to redirect to, then redirect to that path
-          return "/" + search.goto;
+          return "/" + search.path;
         } else {
           // else just redirect back to this location
           // angular is smart enough to only do this once.
@@ -44,4 +44,4 @@ window.App.config(function($httpProvider, $routeProvider, $locationProvider) {
     .otherwise({
       redirectTo: "/"
     });
-})
+});
