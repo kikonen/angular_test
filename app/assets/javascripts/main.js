@@ -1,8 +1,24 @@
 "use strict";
-window.App = angular.module('App', ['ngRoute', 'ngResource']);
+window.App = angular.module(
+  'App', [
+    'ngRoute',
+    'ngResource',
+    'ngCookies',
+    'ng-auth',
+    'ng-auth.strategies.basic'
+  ]);
 
-window.App.config(function($httpProvider, $routeProvider, $locationProvider) {
+window.App.config(function(
+  $httpProvider,
+  $routeProvider,
+  $locationProvider,
+  authProvider)
+{
   $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+
+  authProvider.register('basic', {
+    strategy: 'basic'
+  });
 
   $locationProvider.html5Mode(true);
   $routeProvider
@@ -25,9 +41,18 @@ window.App.config(function($httpProvider, $routeProvider, $locationProvider) {
         }
       }
     })
+    .when("/login", {
+      templateUrl: '../templates/login.html',
+      controller: 'LoginController'
+    })
+    .when("/logout", {
+      redirectTo: function(current, path, search) {
+        return "/";
+      }
+    })
     .when("/tasks", {
       templateUrl: '../templates/task/index.html',
-            controller: 'TaskIndexController'
+      controller: 'TaskIndexController'
     })
     .when("/tasks/create", {
       templateUrl: '../templates/task/show.html',

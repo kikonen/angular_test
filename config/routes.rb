@@ -6,6 +6,9 @@ AngularTest::Application.routes.draw do
     get 'tasks/:id', to: 'task#show'
     post 'tasks', to: 'task#create'
     post 'tasks/:id', to: 'task#update'
+
+    get 'login', to: 'login#create'
+    delete 'login', to: 'login#delete'
   end
 
   # @see http://omarriott.com/aux/angularjs-html5-routing-rails/

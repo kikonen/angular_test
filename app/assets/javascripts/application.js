@@ -21,5 +21,7 @@
 //= require angular-route
 //= require angular-animate
 //= require angular-resource
+//= require angular-cookies
+//= require_tree ../../../vendor/assets/bower_components/ng-auth
 //= require main
 //= require_tree .

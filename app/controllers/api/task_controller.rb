@@ -1,5 +1,5 @@
 module Api
-  class TaskController < ApplicationController
+  class TaskController < ApiController
     def index
       tasks = Task.all
       render json: tasks.map {|t| t.values}
