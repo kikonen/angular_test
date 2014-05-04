@@ -1,4 +1,6 @@
 AngularTest::Application.routes.draw do
+  match '*path', to: 'application#options', via: [:options]
+
   root to: 'static#index'
 
   namespace :api, defaults: {format: :json} do
