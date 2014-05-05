@@ -13,10 +13,11 @@ AngularTest::Application.routes.draw do
     delete 'login', to: 'login#delete'
   end
 
+  get 'auth/token', to: 'authentication#create'
+  delete 'auth/token', to: 'authentication#delete'
+
   # @see http://omarriott.com/aux/angularjs-html5-routing-rails/
   match "/*path" => redirect("/?path=%{path}")
-
-#  get 'tasks', to: 'task#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
