@@ -7,7 +7,7 @@ AngularTest::Application.routes.draw do
     get 'tasks', to: 'task#index'
     get 'tasks/:id', to: 'task#show'
     post 'tasks', to: 'task#create'
-    post 'tasks/:id', to: 'task#update'
+    put 'tasks/:id', to: 'task#update'
 
     get 'login', to: 'login#create'
     delete 'login', to: 'login#delete'

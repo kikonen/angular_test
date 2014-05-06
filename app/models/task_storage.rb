@@ -19,12 +19,19 @@ class TaskStorage
   end
 
   def save(task)
-    if task.id.blank?
-      task.values.id = next_id
+    id = task.id
+    if id.blank?
+      id = next_id
     end
+    id = Integer(id)
+    task.values.id = id
+
     @tasks[task.id.to_i] = task
     save_tasks
     load_tasks
+  rescue => e
+    load_tasks
+    raise
   end
 
   def find(id)

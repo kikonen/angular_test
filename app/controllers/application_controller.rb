@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     headers['Access-Control-Allow-Origin'] = cors_origin
     headers['Access-Control-Allow-Credentials'] = 'true'
     headers['Access-Control-Allow-Methods'] = 'POST, GET, DELETE, PUT, PATCH, OPTIONS'
-    headers['Access-Control-Allow-Headers'] = 'X-CSRF-Token, X-Requested-With, X-Prototype-Version, Authorization'
+    headers['Access-Control-Allow-Headers'] = 'X-CSRF-Token, X-Requested-With, X-Prototype-Version, Authorization, Content-Type'
     headers['Access-Control-Max-Age'] = '1728000'
   end
 
