@@ -23,6 +23,12 @@ module Api
       render json: task.values
     end
 
+    def delete
+      task = Task.find(params[:id])
+      task.delete
+      render json: task, status: :gone
+    end
+
     private
 
     def save

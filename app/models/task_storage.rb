@@ -39,6 +39,14 @@ class TaskStorage
     @tasks[id.to_i]
   end
 
+  def delete(id)
+    task = find(id)
+    if task
+      @tasks.delete(task.id)
+    end
+    save_tasks
+  end
+
   private
 
   def flatten

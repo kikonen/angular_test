@@ -17,4 +17,9 @@ class Task
   def save
     TaskStorage.instance.save(self)
   end
+
+  def delete
+    TaskStorage.instance.delete(id)
+  end
+
 end
