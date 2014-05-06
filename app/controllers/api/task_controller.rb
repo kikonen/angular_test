@@ -7,19 +7,19 @@ module Api
 
     def show
       task = Task.find(params[:id])
-      sleep 0.5
+#      sleep 0.5
       render json: task.values
     end
 
     def create
       task = save
-      sleep 0.5
+#      sleep 0.5
       render json: task.values
     end
 
     def update
       task = save
-      sleep 0.5
+#      sleep 0.5
       render json: task.values
     end
 
