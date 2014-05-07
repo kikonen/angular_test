@@ -10,6 +10,10 @@ AngularTest::Application.routes.draw do
     put 'tasks/:id', to: 'task#update'
     delete 'tasks/:id', to: 'task#delete'
 
+    get 'upload', to: 'upload#get_upload'
+    post 'upload', to: 'upload#post_upload'
+    put 'upload', to: 'upload#put_upload'
+
     get 'login', to: 'login#create'
     delete 'login', to: 'login#delete'
   end
