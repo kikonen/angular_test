@@ -9,7 +9,7 @@ module Api
       ap post: params
       logger.info "upload"
       file = params[:file].tempfile
-      target_file = File.join(Rails.root, "foo.txt")
+      target_file = File.join(Rails.root, "tmp", "foo.txt")
       FileUtils.cp(file, target_file)
       ap sz: File.size(target_file), name: target_file.to_s
     end
