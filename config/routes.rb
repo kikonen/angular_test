@@ -1,5 +1,5 @@
 AngularTest::Application.routes.draw do
-  match '*path', to: 'application#options', via: [:options]
+  match '*path', to: 'application#cors_options', via: [:options]
 
   root to: 'static#index'
 
